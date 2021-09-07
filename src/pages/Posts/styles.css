@@ -1,0 +1,18 @@
+.postsContainer{
+    display: flex;
+    flex-direction: column;
+}
+#postsCards{
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+@media screen and (max-width: 540px ) {
+    #postsCards{
+        width: 380px;
+    }
+}
+

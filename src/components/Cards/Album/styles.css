@@ -1,0 +1,25 @@
+#cardAlbum{
+    background-color: rgba(186, 158, 189, 0.733);
+    display: block;
+    width: 420px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.cardAlbumContent{
+    display: flex;
+}
+
+.cardImage{
+    margin-right: 10px;
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 540px) {
+    #cardAlbum{
+        margin-left: 10px;
+        width: 300px;
+    }
+}
