@@ -1,0 +1,8 @@
+#homePage{
+    display: flex;
+    background-image: url('../../assets/icons/padawansV.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    margin-top: 200px;
+}
