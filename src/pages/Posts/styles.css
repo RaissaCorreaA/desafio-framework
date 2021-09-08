@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     margin-top: 200px;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 540px ) {

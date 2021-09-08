@@ -1,0 +1,94 @@
+header {
+    background-color: rgba(241, 202, 253);
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    min-height: 60px;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+  
+#headerBox {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-around;
+}
+
+.leftContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rightContent {
+    display: flex;
+    margin-left: 100px;
+}
+  
+.labelContainer {
+    display: flex;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+  
+.labelContainer {
+    color: rgb(154, 14, 167);
+}
+  
+.labelTitle {
+    font-size: 18px; 
+    margin-left: 5px;
+    color: rgb(59, 1, 73); 
+}
+
+.labelTitleClicked {
+    font-size: 20px; 
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 700px) {
+
+    .labelContainer {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+
+        font-size: 18px;
+        margin-bottom: 45px;
+        margin-top: -25px;
+        margin-left: 0px;
+    }
+    .rightcontent {
+		display: flex;
+		margin-left: auto;
+		margin-right: 15px;
+    }
+}
+@media screen and (max-width: 540px) {
+    
+	.labelTitle {
+		font-size: 19px;
+	}
+	
+	.labelTitleClicked {
+		font-size: 23px;
+	}
+
+    .labelContainer {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 10px 0;
+        font-size: 18px;
+        border-bottom: 1px solid rgb(167, 166, 195);
+    }
+
+    .labelTitleClicked {
+        border-bottom: none;
+    }
+}
+  
+

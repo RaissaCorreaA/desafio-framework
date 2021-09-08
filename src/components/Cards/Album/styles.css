@@ -1,7 +1,7 @@
 #cardAlbum{
-    background-color: rgba(186, 158, 189, 0.733);
+    background-color: rgba(241, 202, 253, 0.733);
     display: block;
-    width: 420px;
+    width: 95%;
     padding: 10px;
     border-radius: 5px;
 }

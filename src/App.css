@@ -1,7 +1,13 @@
 * {
   font-family: 'Catamaran', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: white;
+  background-color: rgb(247, 227, 253)
 }
+
+.app{
+  height: 100%;
+}
+

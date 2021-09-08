@@ -11,6 +11,7 @@ let Posts = () => {
       setPosts(response.data);
     });
   });
+  
 
   return (
     <div className="postsContainer">
