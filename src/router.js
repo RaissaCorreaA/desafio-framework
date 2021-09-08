@@ -13,6 +13,8 @@ let router = () => {
       <Route path="/posts" component={Posts} />
       <Route path="/albuns" component={Albuns} />
       <Route path="/to-dos" component={ToDos} />
+      <Redirect from ="*" to="/"/>
+        
     </Switch>
   );
 };
