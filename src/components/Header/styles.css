@@ -1,94 +1,84 @@
-header {
-    background-color: rgba(241, 202, 253);
-    position: fixed;
-    height: 100px;
-    width: 100%;
-    min-height: 60px;
-    top: 0;
-    right: 0;
-    left: 0;
-}
-  
-#headerBox {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    justify-content: space-around;
+.Header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-height: 70px;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "logo nav";
+  background-color: rgba(241, 202, 253);
+  height: 80px;
 }
 
-.leftContent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.logo {
+  margin-top: 20px;
 }
 
-.rightContent {
-    display: flex;
-    margin-left: 100px;
+.Nav {
+  display: grid;
+  grid-area: nav;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+  justify-items: center;
 }
-  
-.labelContainer {
-    display: flex;
-    padding: 50px;
-    align-items: center;
-    justify-content: center;
+.Nav a {
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.5s;
+  text-decoration: none;
 }
-  
-.labelContainer {
-    color: rgb(154, 14, 167);
+.Nav a:hover {
+  transform: scale(1.1);
 }
-  
-.labelTitle {
-    font-size: 18px; 
-    margin-left: 5px;
-    color: rgb(59, 1, 73); 
+.menuIcon {
+  display: none;
+  margin: 10px 20px 0 0;
+
+  padding: 0;
+  justify-self: end;
+  font-size: 28px;
+  color: rgb(110, 21, 138);
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.1s;
+}
+.menuIcon:active {
+  transform: scale(1.2);
 }
 
-.labelTitleClicked {
-    font-size: 20px; 
-    transition: 0.5s;
+@media (max-width: 700px) {
+  .Header {
+    grid-template-areas: "logo burger" "nav nav";
+  }
+  .Nav {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: none;
+    grid-row-gap: 20px;
+    padding: 30px 30px;
+    margin: 10px 10px;
+    background: rgba(196, 149, 209, 0.959);
+    border-radius: 10px;
+  }
+  .menuIcon {
+    display: inline;
+  }
 }
 
-@media screen and (max-width: 700px) {
-
-    .labelContainer {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-
-        font-size: 18px;
-        margin-bottom: 45px;
-        margin-top: -25px;
-        margin-left: 0px;
-    }
-    .rightcontent {
-		display: flex;
-		margin-left: auto;
-		margin-right: 15px;
-    }
+.NavAnimation-enter {
+  opacity: 0;
+  transform: scale(0.5);
 }
-@media screen and (max-width: 540px) {
-    
-	.labelTitle {
-		font-size: 19px;
-	}
-	
-	.labelTitleClicked {
-		font-size: 23px;
-	}
-
-    .labelContainer {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        padding: 10px 0;
-        font-size: 18px;
-        border-bottom: 1px solid rgb(167, 166, 195);
-    }
-
-    .labelTitleClicked {
-        border-bottom: none;
-    }
+.NavAnimation-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 350ms, transform 350ms;
 }
-  
-
+.NavAnimation-exit {
+  opacity: 1;
+}
+.NavAnimation-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 350ms, transform 350ms;
+}

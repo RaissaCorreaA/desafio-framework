@@ -25,7 +25,6 @@ let Home = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i class="fab fa-linkedin-in"></i>
             Linkedin
           </a>
         </div>

@@ -79,15 +79,13 @@
 @media screen and (max-width: 1100px ) {
     #toDoContainer{
         margin: 0 auto;
-        margin-top: 50px;
     }
 }
 
 @media screen and (max-width: 700px) {
     #toDoContainer{
         flex-direction: column;
-        width: 370px;
-        margin-top: 50px;
+        width: 290px;
 
     }
 }
