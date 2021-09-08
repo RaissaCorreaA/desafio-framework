@@ -8,6 +8,10 @@
     margin-bottom: 20px;
     padding: 20px;
 }
+#cardPosts:hover {
+    box-shadow: 5px 15px 15px 1px rgba(186, 158, 189, 0.925);
+    transform: scale(1);
+}
 
 .postsTitle{
     font-size: 15px;

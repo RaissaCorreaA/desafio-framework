@@ -5,6 +5,10 @@
     padding: 10px;
     border-radius: 5px;
 }
+#cardAlbum:hover {
+    box-shadow: 5px 15px 15px 1px rgba(186, 158, 189, 0.925);
+    transform: scale(1);
+}
 
 .cardAlbumContent{
     display: flex;

@@ -1,63 +1,57 @@
-import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+
 import logo from "../../assets/frameworkLogo.png";
 
 import "./styles.css";
 
-const HeaderLink = ({ onClick, title, pathname }) => {
-  const location = useLocation();
-
-  return (
-    <div className={"labelContainer"} onClick={onClick} id={title + "-button"}>
-      <label
-        className={
-          pathname === location.pathname ? "labelTitleClicked" : "labelTitle"
-        }
-      >
-        {title}
-      </label>
-    </div>
-  );
-};
-
 function Header() {
-  const history = useHistory();
-  const handlePageLoad = (pathnamme) => {
-    history.push(pathnamme);
+  const [isNavVisible, setNavVisibility] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 700px)");
+    mediaQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange(mediaQuery);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
+
+  const handleMediaQueryChange = mediaQuery => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true);
+    } else {
+      setIsSmallScreen(false);
+    }
+  };
+
+  const toggleNav = () => {
+    setNavVisibility(!isNavVisible);
   };
 
   return (
-    <header>
-      <div id="headerBox">
-        <div className="leftContent">
-          <img src={logo} className="imgLogo" alt="logo Framework" />
-        </div>
-        <div className="rightContent">
-          <>
-            <HeaderLink
-              pathname="/"
-              title="Home"
-              onClick={() => handlePageLoad("/")}
-            />
-            <HeaderLink
-              pathname="/albuns"
-              title="Álbuns"
-              onClick={() => handlePageLoad("/albuns")}
-            />
-            <HeaderLink
-              pathname="/posts"
-              title="Posts"
-              onClick={() => handlePageLoad("/posts")}
-            />
-            <HeaderLink
-              pathname="/to-dos"
-              title="ToDos"
-              onClick={() => handlePageLoad("/to-dos")}
-            />
-          </>
-        </div>
-      </div>
+    <header className="Header">
+      <img src={logo} className="logo" alt="logo da FramWork"/>
+      <CSSTransition
+        in={!isSmallScreen || isNavVisible}
+        timeout={0}
+        classNames="NavAnimation"
+        unmountOnExit
+      >
+        <nav className="Nav">
+          <a href="/">Home</a>
+          <a href="/posts">Posts</a>
+          <a href="/albuns">Álbuns</a>
+          <a href="/to-dos">ToDos</a>
+
+        </nav>
+      </CSSTransition>
+      <button onClick={toggleNav} className="menuIcon">
+        Menu
+      </button>
     </header>
   );
 }
-export default React.memo(Header);
+export default Header;

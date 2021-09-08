@@ -5,26 +5,27 @@ import padawans from "../../assets/padawansV.png";
 let Home = () => {
   return (
     <div id="homePage">
-      <div className="logoHome">
+      <div className="homeImage">
         <img src={padawans} alt="logo desafio padawans" />
       </div>
       <div className="about">
         <h1 className="Nome">Raíssa Corrêa</h1>
         <div className="GitHub">
           <a
-            className="github"
             href="https://github.com/RaissaCorreaA"
             target="_blank"
+            rel="noreferrer"
           >
             Github
           </a>
         </div>
         <div className="Linkedin">
           <a
-            className="linkedin"
             href="https://www.linkedin.com/in/raissacorrea25/"
             target="_blank"
+            rel="noreferrer"
           >
+            <i class="fab fa-linkedin-in"></i>
             Linkedin
           </a>
         </div>
