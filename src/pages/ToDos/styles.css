@@ -1,0 +1,93 @@
+* {
+    font-size: 16px;
+}
+
+#containerButtom { /*botoes posição*/
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    width: 100%;
+    border-radius: 5px;
+
+  }
+.toDoContainer { /*boxes*/
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  
+#buttom {
+    margin: 2vw;
+    transition: 0.3s;
+    width: 15%;
+    height: 30px;  
+    background-color:rgba(162, 94, 170, 0.733);
+    border-radius: 5px;
+  }
+
+.buttomToDo{
+    background-color:rgba(186, 158, 189, 0.733) !important
+  }
+
+.buttomDone{
+    background-color:rgba(231, 199, 235, 0.733) !important
+  }
+
+.buttom:hover {
+    box-shadow: 5px 10px 10px 1px rgb(128, 4, 243);
+    transform: scale(1.50);
+  }
+  
+.done {
+    background-color: rgba(231, 199, 235, 0.733);
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    transition: 0.3s;
+    width: 20%;
+    height: 120px;
+    border-radius: 5px;
+
+  }
+.done:hover {
+    box-shadow: 5px 20px 20px 1px rgba(231, 199, 235, 0.925);
+    transform: scale(1.05);
+
+  }
+.toDo {
+    background-color: rgba(186, 158, 189, 0.733);
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    transition: 0.3s;
+    width: 20%;
+    height: 120px;
+    border-radius: 5px;
+  }
+.toDo:hover {
+    box-shadow: 5px 15px 15px 1px rgba(186, 158, 189, 0.925);
+    transform: scale(1.05);
+ 
+  }
+.searchBox {
+    margin-left: 42.8vw;
+  }
+
+@media screen and (max-width: 1100px ) {
+    #toDoContainer{
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #toDoContainer{
+        flex-direction: column;
+        width: 370px;
+        margin-top: 50px;
+
+    }
+}
